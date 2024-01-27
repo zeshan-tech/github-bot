@@ -1,0 +1,2 @@
+- name: Autopopulate your contribution graph
+  uses: bcanseco/github-contribution-graph-action@2.0.2

@@ -17,7 +17,12 @@ const makeCommit = (n) => {
   // Calculate the next date
   const nextDate = startDate.clone().add(duration, 'days');
 
-  const DATE = nextDate.format("ddd MMM D HH:mm YYYY ZZ");
+  // Generate random hours, minutes, and seconds
+  const hours = getRandomInt(0, 23);
+  const minutes = getRandomInt(0, 59);
+  const seconds = getRandomInt(0, 59);
+
+  const DATE = nextDate.format(`YYYY-MM-DDT${hours}:${minutes}:${seconds}`) + nextDate.format("Z");
 
   const data = {
     date: DATE,
@@ -29,4 +34,4 @@ const makeCommit = (n) => {
   });
 };
 
-makeCommit(1000);
+makeCommit(50);
